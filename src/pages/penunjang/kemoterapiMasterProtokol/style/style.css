@@ -1,0 +1,12 @@
+/* Gaya untuk seluruh header tabel */
+.custom-table .ant-table-thead > tr > th {
+    background-color: #9DDE8B!important; /* Ganti dengan warna yang Anda inginkan */
+    color: #000 !important; /* Ganti dengan warna teks yang Anda inginkan */
+    text-align: center;
+}
+
+.custom-table-tbRiwProtokolKemo .ant-table-thead > tr > th {
+    background-color: aliceblue !important; /* Ganti dengan warna yang Anda inginkan */
+    color: #000 !important; /* Ganti dengan warna teks yang Anda inginkan */
+    text-align: center;
+}

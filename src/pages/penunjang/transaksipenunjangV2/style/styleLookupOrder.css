@@ -1,0 +1,36 @@
+.greena {
+  background-color: #73d13d;
+}
+
+.non-green {
+  background-color: #ffffff;
+}
+
+.RCM_two_level_table1 .ant-table .ant-table-tbody > tr:hover > td {
+  background: unset;
+}
+
+.Select_on_Perbaikan .ant-select-selection {
+  background-color: #b7eb8f;
+}
+
+.modal_lookuporder .ant-modal-header {
+  padding: 11px 16px;
+  color: rgba(0, 0, 0, 0.85);
+  background: #bdb2ff;
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 2px 2px 0 0;
+}
+
+.modal_detailtransaksi .ant-modal-header {
+  background: #a0c4ff;
+}
+
+.modal_daftarpemeriksaan .ant-modal-header {
+  background: #caffbf;
+}
+
+.disabled-row {
+  background-color: #dcdcdc;
+  pointer-events: none;
+}

@@ -1,0 +1,37 @@
+                            a.NOREG as registrasiId,
+                            c.TGLREG as tglRegistrasi,
+                            c.NOPASIEN as pasienId,
+                            d.NAMAPASIEN as namaPasien,
+                            d.TGLLAHIR as tglLahir,
+                            d.ALM1PASIEN as alm1Pasien,
+                            a.NOORDER as noOrder,
+                            a.TGLORDER as tglOrder,
+                            a.JNSORDER as jnsOrder,
+                            a.UNITORDER as ruangId,
+                            b.NAMABAGIAN as namaBagian,
+                            a.UNITTUJUAN as unitTujuan,
+                            a.STSORDER as stsOrder,
+                            a.KODEDOKTER as dPJP,
+                            e.NAMADOKTER as namaDPJP
+
+//var strSql = @"SELECT 
+//    a.OrderId as orderId, 
+//    a.NoOrder as noOrder, 
+//    a.RegistrasiId as registrasiId, 
+//    b.PasienId as pasienId,
+//    b.TanggalMasuk as tglRegistrasi, 
+//    b.RuangId as ruangId, 
+//    b.RuangKonsulId ruangKonsul,
+//    b.NoAntrianKlinik as noAntrianKlinik,
+//    b.DokterID as dPJP, 
+//    b.NamaDPJP as namaDPJP,
+//    b.FastTrack as fastTrack, 
+//    b.NamaPasien as namaPasien,
+//    c.DialisisHeaderId as dialisisHeaderId
+//    FROM Bill_OrderPenunjang a
+//    LEFT JOIN Emr_PasienAktif b on a.RegistrasiId = b.RegistrasiId
+//    LEFT JOIN Emr_DialisisHeader c on a.NoOrder = c.NoOrder
+//    WHERE a.UnitTujuanId='9406' and 
+//    (DATEPART(yy, TanggalOrder) = @thn
+//    AND DATEPART(mm, TanggalOrder) = @bln
+//    AND DATEPART(dd, TanggalOrder) = @hri)";

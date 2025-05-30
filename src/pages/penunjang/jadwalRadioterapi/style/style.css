@@ -1,0 +1,10 @@
+.terjadwal {
+    background-color: #40a9ff;
+}
+.terlayani {
+    background-color: #95de64;
+}
+
+.RCM_two_level_table1 .ant-table .ant-table-tbody > tr:hover > td {
+background: unset;
+}

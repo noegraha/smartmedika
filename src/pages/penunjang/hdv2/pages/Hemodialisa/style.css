@@ -1,0 +1,65 @@
+.greena {
+  background-color: #ffec3d;
+}
+.greenb {
+  background-color: #36cfc9;
+}
+.greenc {
+  background-color: #9254de;
+}
+.greend {
+  background-color: #f759ab;
+}
+.greene {
+  background-color: #73d13d;
+}
+.greenf {
+  color: #9254de;
+}
+
+.red {
+  background-color: azure;
+}
+
+.ant-table.ant-table-small .ant-table-title,
+.ant-table.ant-table-small .ant-table-footer,
+.ant-table.ant-table-small .ant-table-thead > tr > th,
+.ant-table.ant-table-small .ant-table-tbody > tr > td,
+.ant-table.ant-table-small tfoot > tr > th,
+.ant-table.ant-table-small tfoot > tr > td {
+  padding: 4.5px 4px;
+}
+
+.ant-tabs-top > .ant-tabs-nav,
+.ant-tabs-bottom > .ant-tabs-nav,
+.ant-tabs-top > div > .ant-tabs-nav,
+.ant-tabs-bottom > div > .ant-tabs-nav {
+  margin: 0 0 8px 0;
+}
+
+.ant-card-body {
+  padding: 10px;
+}
+
+.belum_entry {
+  background-color: #ffffff;
+}
+.pasien_tersimpan {
+  background-color: #ffec3d;
+}
+.assesment_terisi {
+  background-color: #36cfc9;
+}
+.preskripsi_terisi {
+  background-color: #9254de;
+}
+.intrahd_terisi {
+  background-color: #f759ab;
+}
+.selesai_entry {
+  background-color: #73d13d;
+}
+
+.RCM_two_level_table1 .ant-table .ant-table-tbody > tr:hover > td {
+  background: unset;
+}

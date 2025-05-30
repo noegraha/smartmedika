@@ -1,0 +1,41 @@
+.kop-margono {
+  margin: -8px;
+}
+
+.kop-margono-alamat {
+  margin: -5px -5px 0px -5px;
+}
+
+p.western {
+  margin: 0;
+  line-height: 12pt;
+  font-size: 12pt;
+}
+
+@page {
+  size: 215mm 330mm;
+  margin: 10mm 10mm 10mm 10mm;
+}
+
+@media all {
+  .pagebreak {
+    display: none;
+  }
+}
+
+@media print {
+  html,
+  body {
+    height: initial !important;
+    overflow: initial !important;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+@media print {
+  .page-break {
+    margin-top: 1rem;
+    display: block;
+    page-break-before: always;
+  }
+}

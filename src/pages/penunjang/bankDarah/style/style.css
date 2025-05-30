@@ -1,0 +1,58 @@
+.belum_kirim {
+    background-color: #ffffff;
+}
+.sudah_kirim {
+    background-color: #b7eb8f;
+}
+
+.kirim {
+    background-color: #b7eb8f;
+}
+
+.belum_jawab{
+    background-color: #ffec3d;
+}
+
+.sudah_jawab{
+    background-color: #b7eb8f;
+}
+
+
+/* Gaya khusus hanya untuk tab di dalam komponen dengan kelas my-tabs */
+.my-tabs .ant-tabs-nav .ant-tabs-tab:nth-child(1) {
+    background-color: #f28c8c !important;
+}
+
+.my-tabs .ant-tabs-nav .ant-tabs-tab:nth-child(2) {
+    background-color: #f4d93a !important;
+}
+
+.my-tabs .ant-tabs-nav .ant-tabs-tab:nth-child(3) {
+    background-color: #8bb3e5 !important;
+}
+
+.my-tabs .ant-tabs-nav .ant-tabs-tab:nth-child(4) {
+    background-color: #f7b24e !important;
+}
+
+.my-tabs .ant-tabs-nav .ant-tabs-tab:nth-child(5) {
+    background-color: #d1a5f7 !important;
+}
+
+/* Gaya untuk teks pada tab */
+.my-tabs .ant-tabs-nav .ant-tabs-tab .ant-tabs-tab-btn {
+    color: #595959 !important;
+}
+
+/* Gaya untuk teks tab yang aktif menjadi warna biru */
+.my-tabs .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #141414 !important; /* Mengubah warna teks aktif menjadi biru */
+    font-weight: bold; /* Membuat teks aktif menjadi tebal */
+}
+
+/* Gaya untuk teks tab yang tidak aktif */
+.my-tabs .ant-tabs-nav .ant-tabs-tab:not(.ant-tabs-tab-active) .ant-tabs-tab-btn {
+    color: gray; /* Mengubah warna teks tab yang tidak aktif menjadi abu-abu */
+}
+
+

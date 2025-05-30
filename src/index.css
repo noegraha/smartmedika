@@ -1,0 +1,255 @@
+/* @import "~antd/dist/antd.compact.css"; */
+/* @import "~@ant-design/aliyun-theme/index.less"; */
+/* @import "~antd/dist/antd.css"; */
+/* @import "~antd/dist/antd.dark.css"; */
+/* * {
+  animation-duration: 0s !important;
+} */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.bgcolor {
+  color: black;
+  background-color: #efffaa;
+}
+
+.bgcolortunggu {
+  background-color: lightblue;
+  font-size: 10;
+}
+
+.bgcolorsuccess {
+  background-color: lightskyblue;
+}
+
+.bgcolordanger {
+  font-size: 10;
+}
+
+.bgcolorkuning {
+  font-weight: bold;
+  color: tomato;
+}
+
+.bgcolormerah {
+  font-weight: bold;
+  color: darkslategrey;
+}
+
+.bgcolorselesai {
+  background-color: springgreen;
+}
+
+.bgcolordisetujui {
+  background-color: #cf00c1;
+}
+
+.bgcolordisetujui:hover {
+  background-color: #fd0aed;
+}
+
+.bgcolorditolak {
+  background-color: #ebc400;
+}
+
+.bgcolorditolak:hover {
+  background-color: #fcd929;
+}
+
+.bgcolorterisi {
+  background-color: #1ba253;
+}
+
+.bgcolorterisi:hover {
+  background-color: #4aee8e;
+}
+
+#navbar {
+  height: var(--header-height);
+  min-height: 5rem;
+  background-color: rgb(112, 112, 112);
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #0f2027, #203a43, #11232b);
+}
+
+.logobaru {
+  height: var(--header-height);
+  width: var(--header-height);
+  min-width: 5rem;
+  min-height: 5rem;
+  position: absolute;
+}
+
+.title {
+  flex: 1;
+  align-self: center;
+  text-align: center;
+  color: azure;
+  font-size: 3.5rem;
+  margin: 0px;
+  position: relative;
+  top: -0.2rem;
+}
+
+.clock-wrapper {
+  position: absolute;
+  right: 0;
+  height: var(--header-height);
+  min-height: 5rem;
+  min-width: 17rem;
+  background-color: rgb(214, 95, 95);
+  color: azure;
+  font-weight: 500;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+}
+
+.clock-wrapper span {
+  padding: 0 2px;
+  margin: 2px 0;
+  /* font-size: 3.5rem; */
+  position: relative;
+  top: -0.2rem;
+  /* border: 2px solid black; */
+}
+
+.clock-wrapper span:nth-child(2) {
+  animation: secondBlink 1s infinite;
+  top: -0.1em;
+}
+
+@keyframes secondBlink {
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-25%);
+  }
+  50% {
+    transform: translateY(4%);
+  }
+  65% {
+    transform: translateY(-2%);
+  }
+  80% {
+    transform: translateY(2%);
+  }
+  95% {
+    transform: translateY(-1%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+.popup {
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  background-clip: padding-box;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  left: 0px;
+  list-style-type: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.popup li {
+  clear: both;
+  color: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 22px;
+  margin: 0;
+  padding: 5px 12px;
+  transition: all 0.3s;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s;
+}
+
+.popup li:hover {
+  background-color: #e6f7ff;
+}
+
+.popup li > i {
+  margin-right: 8px;
+}
+
+.blinking-text {
+  animation: blink 1.5s ease-in-out infinite;
+  /* Durasi dan fungsi waktu yang lebih halus */
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+    /* Teks terlihat penuh */
+  }
+
+  50% {
+    opacity: 0;
+    /* Teks tidak terlihat */
+  }
+}
+/* 
+.error {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(45, 188, 255, 0.7);
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+h1 {
+  color: #fff;
+  font-weight: 600;
+  margin: 40px 0 -120px;
+  font-size: calc(17vw + 40px);
+  opacity: 0.8;
+  letter-spacing: -17px;
+}
+
+p {
+  opacity: 0.8;
+  font-size: 20px;
+  margin: 8px 0 25px 0;
+  font-weight: bold;
+} */

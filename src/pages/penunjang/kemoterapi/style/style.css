@@ -1,0 +1,17 @@
+/* .ant-collapse-header {
+    border-radius: 0 0 2px 2px;
+    background: #73d13d;
+} */
+
+.active.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    border-radius: 0 0 2px 2px;
+    background: #73d13d;
+  }
+
+.id_not_null {
+    background-color: #ffec3d;
+}
+
+.imp_not_null {
+    background-color: #95de64;
+}
