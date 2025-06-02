@@ -14,7 +14,6 @@ import Iframe from "react-iframe";
 import { PasienRIContext } from "../context/PasienRIContext";
 import dayjs from "dayjs";
 import { PrintOutContext } from "../../PrintOutDokumen/PrintOutContext";
-import Antal from "../../tools/Antal";
 import ListAntal from "../../tools/ListAntal";
 const { TabPane } = Tabs;
 const { Option } = Select;
