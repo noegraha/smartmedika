@@ -1,82 +1,137 @@
-Smart Medika Front End project
+# SmartMedika
 
-Framework using ANTD (Ant Design) (https://ant.design)
+SmartMedika adalah aplikasi sistem informasi rumah sakit berbasis web yang komprehensif, dibangun menggunakan React.js, Ant Design, dan berbagai pustaka JavaScript modern lainnya. Proyek ini dirancang untuk mengelola berbagai aspek operasional rumah sakit, mulai dari pendaftaran pasien, rekam medis, farmasi, penunjang medis (seperti HD, ESWL, Bank Darah, Radioterapi), hingga manajemen pengguna dan bridging dengan sistem eksternal seperti SatuSehat dan BPJS VClaim.
 
-How To RUN Projects:
+## Teknologi yang Digunakan
 
-1. Download / Pull project
-2. Go to project directory
-3. Running `npm install`
-4. Running `npm start`
-5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* **Frontend:** React.js
+* **UI Framework:** Ant Design (antd), antd-mobile
+* **State Management/Data Fetching:** React Query (terlihat di `package.json`), Context API
+* **Routing:** React Router DOM
+* **HTTP Client:** Axios
+* **Build Tooling:** Create React App (CRA) dengan `react-app-rewired` dan `customize-cra` untuk kustomisasi Webpack/Babel.
+* **Tanggal & Waktu:** Day.js, Moment.js, Moment-timezone
+* **Fitur Spesifik:**
+    * `face-api.js`, `react-webcam`: Untuk fitur deteksi dan pengenalan wajah.
+    * `react-beautiful-dnd`: Untuk fungsionalitas drag-and-drop (perhatikan kompatibilitas React versi 18 ke bawah).
+    * `@react-pdf/renderer`: Untuk pembuatan dokumen PDF (perhatikan kompatibilitas React versi 17 ke bawah).
+    * `html-to-image`, `html2canvas`, `jspdf`, `xlsx`, `papaparse`: Untuk ekspor data dan laporan.
+    * `react-barcode`, `recordrtc`, `react-idle-timer`, `react-hotkeys-hook`.
 
----
+## Fitur Utama
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Berdasarkan struktur folder `src/pages` dan dependensi, SmartMedika mencakup modul-modul berikut:
 
-## Available Scripts
+* **Manajemen Pengguna & Pengaturan Aplikasi:**
+    * Master User, Group, Modul, dan Hak Akses (`appsetting`)
+    * Changelog Aplikasi
+    * Face Detection & Recognition untuk autentikasi/identifikasi (`usersetting`, `tools`)
+* **Pendaftaran & Rawat Jalan:**
+    * Pendaftaran Pasien, Anamnesa, Pemeriksaan Fisik
+    * Diagnosis (ICD-10, SNOMED CT), Prosedur (ICD-9-CM, SNOMED CT)
+    * Order Resep, Order Penunjang (Lab, Radiologi)
+    * Bridging BPJS VClaim (Surat Kontrol, Rujuk Balik)
+    * SatuSehat Integration (Encounter, Observation, Medication, etc.)
+* **Rawat Inap:**
+    * Manajemen Pasien Rawat Inap, Transfer Ruang/Penjamin
+    * Askep (Asuhan Keperawatan)
+    * Pemeriksaan Harian (CPPT, TTV, EWS, dll.)
+    * Manajemen Kamar & Bed
+* **Instalasi Gawat Darurat (IGD):**
+    * Triase, CPPT IGD
+    * Order Penunjang IGD
+* **Farmasi:**
+    * Transaksi Resep, Pengembalian Resep
+    * Riwayat Resep Pasien
+* **Penunjang Medis:**
+    * **Hemodialisa (HD):** Assesment, Instruksi Medik, Monitoring Dialisis, Laporan.
+    * **ESWL:** Form Tindakan, Hasil.
+    * **Bank Darah:** Order Darah, Pelayanan Darah, Manajemen Stok.
+    * **Kemoterapi:** Protokol Kemoterapi, Pelayanan Kemoterapi.
+    * **Radioterapi:** Jadwal Radioterapi, Pelayanan Radioterapi.
+    * **Gizi:** Asuhan Gizi, Screening Gizi.
+    * **Laboratorium & Patologi Anatomi (Lab PA):** Order, Hasil.
+* **Bridging & Integrasi:**
+    * SatuSehat (Encounter, Patient, Observation, Medication, Procedure, etc.)
+    * BPJS VClaim (Surat Kontrol, PRB, etc.)
+    * Bridging SITB
+* **Laporan & Dashboard:**
+    * Dashboard Rawat Jalan, Rawat Inap, Askep, ESWL, HD.
+    * Laporan Statistik Kunjungan, Diagnosis, dll.
+* **Tools:**
+    * Sinkronisasi data (ICD, Billing)
+    * Fitur pengenalan suara (Speech-to-Text), rekam audio
+    * Modul Face Detection & Recognition
 
-In the project directory, you can run:
+## Persyaratan Sistem
 
-### `yarn start`
+* Node.js (Disarankan versi LTS, seperti 18.x.x atau 20.x.x, karena masalah kompatibilitas dengan React 19 dan beberapa pustaka)
+* npm atau Yarn
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Instalasi
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Ikuti langkah-langkah di bawah ini untuk menjalankan proyek secara lokal:
 
-### `yarn test`
+1.  **Clone repositori:**
+    ```bash
+    git clone <URL_REPOSITORI_ANDA>
+    cd smartmedika
+    ```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2.  **Hapus `node_modules` dan *lock file* yang ada (untuk membersihkan instalasi sebelumnya):**
+    ```bash
+    rm -rf node_modules
+    del package-lock.json # Untuk Windows
+    # Jika menggunakan Yarn: rm yarn.lock
 
-### `yarn build`
+    npm cache clean --force # Bersihkan cache npm
+    # Jika menggunakan Yarn: yarn cache clean
+    ```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3.  **Pastikan versi React yang benar di `package.json` (penting untuk menghindari konflik):**
+    Karena `react-beautiful-dnd` (dan mungkin `@react-pdf/renderer`) belum sepenuhnya mendukung React 19, disarankan untuk mematok `react` dan `react-dom` ke versi `18.2.0`.
+    Buka `package.json` dan pastikan baris-baris berikut **tanpa tanda `^` atau `~`**:
+    ```json
+    "dependencies": {
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "react-scripts": "5.0.1",
+      "react-beautiful-dnd": "^13.1.1",
+      "@react-pdf/renderer": "^1.6.17", // Atau versi yang lebih baru jika tersedia dan kompatibel
+      "next": "^15.3.3", // Atau versi yang diinginkan
+      // ... dependensi lainnya
+    }
+    ```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+4.  **Instal semua dependensi:**
+    ```bash
+    npm install
+    # atau
+    # yarn install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5.  **Jalankan aplikasi di mode pengembangan:**
+    ```bash
+    npm start
+    # atau
+    # yarn start
+    ```
+    Aplikasi akan berjalan di `http://localhost:3000` (atau port lain yang tersedia).
 
-### `yarn eject`
+## Catatan Penting Mengenai Migrasi ke Next.js
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Proyek ini saat ini menggunakan Create React App (`react-scripts`). Jika Anda berencana untuk memigrasikannya sepenuhnya ke Next.js, Anda perlu melakukan langkah-langkah tambahan:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1.  **Struktur Proyek Next.js:** Pindahkan komponen halaman Anda ke dalam folder `pages/` sesuai konvensi Next.js.
+2.  **Routing:** Ganti `react-router-dom` dengan sistem *routing* berbasis file Next.js.
+3.  **Data Fetching:** Sesuaikan metode *data fetching* Anda menggunakan `getServerSideProps` atau `getStaticProps` untuk SSR/SSG.
+4.  **Konfigurasi Webpack/Babel:** Konfigurasi kustom di `config-overrides.js` (untuk Less loader dan Ant Design) perlu direplikasi di `next.config.js`. Ant Design memiliki plugin khusus untuk Next.js.
+5.  **Uji Kompatibilitas:** Perhatikan pustaka seperti `react-beautiful-dnd` dan `@react-pdf/renderer`. Jika Anda ingin menggunakan React 19 atau versi Next.js yang lebih baru yang memerlukan React 19, Anda *harus* mencari alternatif untuk pustaka yang tidak kompatibel ini atau menemukan *fork* yang mendukung React versi terbaru.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Kontribusi
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Untuk berkontribusi pada proyek ini, silakan ikuti alur kerja standar GitHub (fork, buat branch, commit perubahan, buat pull request).
 
-## Learn More
+## Lisensi
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Tentukan jenis lisensi di sini, contoh: MIT License]
