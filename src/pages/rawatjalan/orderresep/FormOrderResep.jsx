@@ -278,6 +278,7 @@ const FormOrderResep = () => {
     ruangOrderId: ruangasal,
     ruangTujuanId: unitorder,
     kelasRawatId: "A",
+    // orderSebelumnya: null,
     totalBiaya:
       items
         .map((v) => v.hargaTotal)

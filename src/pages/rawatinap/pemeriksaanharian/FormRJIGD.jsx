@@ -74,16 +74,9 @@ const FormRJIGD = () => {
                 }
               }}
             >
-              {dariRj === false ? (
-                <>
-                  <Option value="1">RM 02</Option>
-                </>
-              ) : (
-                <>
-                  <Option value="2">Catatan Dokter IGD</Option>
-                  <Option value="3">Catatan Perawat IGD</Option>
-                </>
-              )}
+              <Option value="1">RM 02</Option>
+              <Option value="2">Catatan Dokter IGD</Option>
+              <Option value="3">Catatan Perawat IGD</Option>
             </Select>
           </Form.Item>
         </Col>

@@ -167,50 +167,10 @@ const MainAPP = () => {
           </Row>
         </div>
       ),
-      onOk() { },
+      onOk() {},
     });
   }
-  // const history = useHistory();
-  // const routeChange = () => {
-  //   history.push("/#/app/form/anamnesa");
-  // };
   useHotkeys("shift+t", () => info());
-  // useHotkeys("shift+r", () => routeChange());
-  // const [isExpired, setIsExpired] = useState(false);
-  // useEffect(() => {
-  //   const checkExpiration = () => {
-  //     const currentTimeInSeconds = Math.floor(Date.now() / 1000);
-  //     const timeOut = sessionStorage.getItem("timeOut");
-  //     const timeOut2 = 1694651500;
-
-  //     if (currentTimeInSeconds >= 1694651500) {
-  //       // Expiration time is reached; log out the user or trigger the logout action here.
-  //       setIsExpired(true);
-  //       console.log("LOGOUT", currentTimeInSeconds, ">=", timeOut);
-
-  //       Modal.info({
-  //         title: "Token Anda telah expired",
-  //         content: (
-  //           <div>
-  //             <p>Untuk melanjutkan silahkan login kembali. Terima kasih.</p>
-  //           </div>
-  //         ),
-  //         onOk() {
-  //           signOut();
-  //         },
-  //       });
-  //       // You can also clear any user session or access tokens here.
-  //     }
-  //   };
-
-  //   // Check the expiration status periodically (e.g., every second).
-  //   const timer = setInterval(checkExpiration, 1000);
-
-  //   return () => {
-  //     // Clean up the timer when the component unmounts.
-  //     clearInterval(timer);
-  //   };
-  // }, [isExpired, signOut]);
   if (!token) {
     return <Redirect to="/login" />;
   }
@@ -222,9 +182,7 @@ const MainAPP = () => {
             {/* <BackTop /> */}
             <TransaksiContextProvider>
               <TransaksiRIContextProvider>
-
                 <SatuSehatModulContextProvider>
-
                   <Layout>
                     <Menubar />
                     <Layout>
@@ -314,22 +272,6 @@ const MainAPP = () => {
                         )}
                         allowedRoles={["SMG"]}
                       />
-                      {/* <Route path="/igd">
-                      <Layout>
-                        <Content
-                          style={{
-                            padding: 7,
-                            height: "100%",
-                            flexDirection: "column",
-                            msFlexDirection: "column",
-                            display: "flex",
-                          }}
-                        >
-                          <MainIGD />
-                        </Content>
-                      </Layout>
-                      <Footerbar />
-                    </Route> */}
 
                       {/* Menu Rawat Inap */}
                       <Route path="/pemeriksaanharian/ri">
@@ -351,25 +293,6 @@ const MainAPP = () => {
                         </Layout>
                         <Footerbar />
                       </Route>
-                      {/* <Route path="/IMP/ri">
-                      <Layout>
-                        <SidebarRI />
-                        <Content
-                          style={{
-                            padding: 7,
-                            height: "100%",
-                            flexDirection: "column",
-                            msFlexDirection: "column",
-                            display: "flex",
-                          }}
-                        >
-                          <PageheadRI />
-                          <MenuBarIMP />
-                          <FormMenuIMP />
-                        </Content>
-                      </Layout>
-                      <Footerbar />
-                    </Route> */}
 
                       <Route path="/dashboardRuangRI/ri">
                         <Layout>
@@ -1266,9 +1189,7 @@ const MainAPP = () => {
                   <Route path="/app/iconbar">
                     <MenuIconBar />
                   </Route>
-
                 </SatuSehatModulContextProvider>
-
               </TransaksiRIContextProvider>
             </TransaksiContextProvider>
           </Layout>

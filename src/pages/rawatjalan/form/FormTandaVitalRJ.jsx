@@ -231,25 +231,6 @@ const FormTandaVitalRJ = () => {
       },
     });
   }
-  // const filterSubmit = () => {
-  //   if (
-  //     alatbantu === null &&
-  //     protesa === null &&
-  //     cacattubuh === null &&
-  //     adl === null &&
-  //     hubkeluarga === null &&
-  //     psikologis === null &&
-  //     keyakinan === null &&
-  //     supkeluarga === null &&
-  //     analisa === null &&
-  //     implementasi === null &&
-  //     edukasi === null
-  //   ) {
-  //     showConfirm();
-  //   } else {
-  //     simpanData();
-  //   }
-  // };
   const simpanData = () => {
     // e.preventDefault();
     insertRJumum(dataRJ);
@@ -544,19 +525,6 @@ const FormTandaVitalRJ = () => {
                     />
                   </Input.Group>
                 </Form.Item>
-                {/* <Form.Item style={{ marginBottom: 0 }}>
-                <Row>
-                  <Col span={24} style={{ textAlign: "right" }}>
-                    <Button
-                      type="primary"
-                      htmlType="submit"
-                      onClick={(e) => onSubmit(e)}
-                    >
-                      Simpan
-                    </Button>
-                  </Col>
-                </Row>
-              </Form.Item> */}
               </Col>
             </Row>
             <Divider orientation="left">Keadaan Umum Pasien</Divider>
@@ -662,18 +630,6 @@ const FormTandaVitalRJ = () => {
                     </div>
                   )}
                 </Checkbox>
-                {/* <Select
-                  placeholder="-PILIH-"
-                  style={{ width: "100%" }}
-                  value={keyakinan}
-                  onChange={(e) => onAgama(e)}
-                >
-                  <Option value="1">YA</Option>
-                  <Option value="2">TIDAK</Option>
-                </Select> */}
-                {/* <Checkbox onChange={(e) => onAgama(e.target.checked)}>
-                {keyakinan ? "YA" : "TIDAK"}
-              </Checkbox> */}
               </Col>
               <Col span={6} xs={12} sm={12} md={8} lg={6} xl={6}>
                 Dukungan Keluarga
@@ -694,55 +650,8 @@ const FormTandaVitalRJ = () => {
                     </div>
                   )}
                 </Checkbox>
-                {/* <Select
-                  placeholder="-PILIH-"
-                  style={{ width: "100%" }}
-                  value={supkeluarga}
-                  onChange={(e) => onDukungan(e)}
-                >
-                  <Option value="1">ADA</Option>
-                  <Option value="2">TIDAK</Option>
-                </Select> */}
-                {/* <Checkbox onChange={(e) => onDukungan(e.target.checked)}>
-                {supkeluarga ? "ADA" : "TIDAK"}
-              </Checkbox> */}
               </Col>
             </Row>
-            {/* <Row gutter={[16, 16]}>
-          <Col span={8} xs={24} sm={12} md={8} lg={8} xl={8}>
-            Analisa Keperawatan
-            <br />
-            <TextArea
-              rows={4}
-              showCount
-              maxLength={256}
-              value={analisa}
-              onChange={(e) => onAnalisakep(e)}
-            />
-          </Col>
-          <Col span={8} xs={24} sm={12} md={8} lg={8} xl={8}>
-            Implementasi
-            <br />
-            <TextArea
-              rows={4}
-              showCount
-              maxLength={256}
-              value={implementasi}
-              onChange={(e) => onImplementasi(e)}
-            />
-          </Col>
-          <Col span={8} xs={24} sm={12} md={8} lg={8} xl={8}>
-            Edukasi
-            <br />
-            <TextArea
-              rows={4}
-              showCount
-              maxLength={256}
-              value={edukasi}
-              onChange={(e) => onEdukasi(e)}
-            />
-          </Col>
-        </Row> */}
             Rekonsiliasi Obat : Apakah menggunakan obat sebelumnya ? {"   "}
             <Radio.Group
               onChange={(e) => radioHandler(e)}
@@ -768,23 +677,17 @@ const FormTandaVitalRJ = () => {
               <Col span={24} style={{ textAlign: "right" }}>
                 <Button
                   type="primary"
-                  // htmlType="submit"
                   onClick={(e) => onSubmit(e)}
                   disabled={
                     dayjs().format("DD-MM-YYYY") === curpas.tanggalMasuk ||
                     poli1 === "91A7" ||
                     poli1 === "9125"
-                      ? // || poli1 === "9147"
-                        false
+                      ? false
                       : true
                   }
                 >
                   Simpan
                 </Button>
-
-                {/* <Button type="primary" htmlType="submit" onClick={filterSubmit}>
-                Simpan
-              </Button> */}
               </Col>
             </Row>
           </Spin>

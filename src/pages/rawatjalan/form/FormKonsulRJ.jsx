@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Table, Button, Card, Alert, Modal, Space } from "antd";
+import { Table, Button, Card, Alert, Modal, Space, Divider } from "antd";
 import { KonsulContext } from "../context/KonsulContext";
 import { useContext } from "react";
 import Formkonsul from "../komponen/formkonsul";
@@ -73,7 +73,7 @@ const FormKonsul = () => {
           dataSource={konsul}
           size="small"
           rowKey="reg"
-          scroll={{ x: 700 }}
+          // scroll={{ x: 700 }}
         >
           <Column
             title="Ruangan Dokter"
@@ -92,8 +92,7 @@ const FormKonsul = () => {
                 <br />
                 <b>Waktu Konsul</b> <br />
                 {formatDate(konsul.tanggal)}
-                <br />
-                <br />
+                <Divider />
                 <b>Ruang Tujuan</b>
                 <br />
                 {konsul.ruangTujuanDesk}

@@ -85,21 +85,21 @@ const FormBilling = () => {
     if (pel === null) {
       Modal.warning({ content: "Pelayanan masih kosong!" });
     } else if (pel === "RJM013" || pel === "RJP009") {
-      if (curpas.ruangId === ruangasal && curpas.ruangKonsul === null) {
-        message.warning(
-          "Tidak bisa menambahkan pelayanan konsul pada poli sendiri"
-        );
-      } else if (
-        curpas.ruangId === ruangasal &&
-        curpas.ruangKonsul.substring(0, 1) !== "A"
-      ) {
-        message.warning(
-          "Tidak bisa menambahkan pelayanan konsul pada poli sendiri"
-        );
-      } else {
-        console.log(billpelayanan);
-        insertBiiling(billpelayanan);
-      }
+      // if (curpas.ruangId === ruangasal && curpas.ruangKonsul === null) {
+      //   message.warning(
+      //     "Tidak bisa menambahkan pelayanan konsul pada poli sendiri"
+      //   );
+      // } else if (
+      //   curpas.ruangId === ruangasal &&
+      //   curpas.ruangKonsul.substring(0, 1) !== "A"
+      // ) {
+      message.warning(
+        "Tidak bisa menambahkan transaksi konsultasi pada poli sendiri, transaksi Konsultasi akan muncul setelah konsultasi selesai dijawab."
+      );
+      // } else {
+      //   console.log(billpelayanan);
+      //   insertBiiling(billpelayanan);
+      // }
     } else {
       insertBiiling(billpelayanan);
       console.log(billpelayanan);
@@ -107,15 +107,6 @@ const FormBilling = () => {
   };
 
   const editBilling = () => {
-    // pel === null
-    //   ? Modal.warning({ content: "Pelayanan masih kosong!" })
-    //   : pegawai !== null
-    //   ? pegawai.slice(0, 1) === "D"
-    //     ? message.warning(
-    //         "Maaf User Dokter Tidak Dapat Melakukan Transaksi Billing"
-    //       )
-    //     : insertBiiling(billpelayanan)
-    //     : insertBiiling(billpelayanan);
     insertBiiling(billpelayanan);
     setModalEdit(false);
     console.log(billpelayanan);
@@ -125,17 +116,7 @@ const FormBilling = () => {
     detailPelayanan(e);
   };
   const onDelete = (noreg, pelayanan, dokter, ruang, id) => {
-    // pegawai !== null
-    //   ? pegawai.slice(0, 1) === "D"
-    //     ? message.warning(
-    //         "Maaf User Dokter Tidak Dapat Melakukan Transaksi Billing"
-    //       )
-    //     : deleteBillingById(noreg, id, namauser, ip)
-    //   : deleteBillingById(noreg, id, namauser, ip);
     deleteBillingById(noreg, id, namauser, ip);
-    // deleteBilling(noreg, pelayanan, dokter);
-    // deleteBillingDetail(noreg, pelayanan, dokter, ruang, namauser, ip);
-    // console.log(noreg, pelayanan, dokter, ruang, namauser, ip);
   };
   const cancel = () => {
     message.warning("Batal Dihapus");

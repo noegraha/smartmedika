@@ -26,7 +26,8 @@ import {
   SmileOutlined,
 } from "@ant-design/icons";
 import ReactQuill from "react-quill";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
+
 import { PelayananContext } from "../context/Pelayanancontext";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 const { TextArea } = Input;
@@ -161,7 +162,7 @@ const FormProtokolKemo = () => {
       title: <div style={{ textAlign: "center" }}>Obat</div>,
       dataIndex: "ObatProtokol",
       key: "ObatProtokol",
-      render: (text) => <div>{ReactHtmlParser(text)}</div>,
+      render: (text) => <div>{parse(text)}</div>,
       width: 300,
       // align: 'center',
     },
@@ -169,7 +170,7 @@ const FormProtokolKemo = () => {
       title: <div style={{ textAlign: "center" }}>Prosedur Pelaksanaan</div>,
       dataIndex: "ProsedurProtokol",
       key: "ProsedurProtokol",
-      render: (text) => <div>{ReactHtmlParser(text)}</div>,
+      render: (text) => <div>{parse(text)}</div>,
       // align: 'center',
     },
     {
@@ -184,7 +185,7 @@ const FormProtokolKemo = () => {
           type="primary"
           icon={<CopyOutlined />}
           size="small"
-        // style={{ width: '30px' }}
+          // style={{ width: '30px' }}
         >
           Salin
         </Button>
@@ -246,9 +247,13 @@ const FormProtokolKemo = () => {
           });
         } else {
           let data = {};
-          data.registrasiId = tabProtKemo === '2' ? tempRegId : curpas.registrasiId;
-          data.pasienId = tabProtKemo === '2' ? tempPxId : curpas.pasienId;
-          data.tglProtokol = tabProtKemo === '2' ? dayjs(tglDashboard).format('YYYY-MM-DD') : dayjs(tanggal).format();
+          data.registrasiId =
+            tabProtKemo === "2" ? tempRegId : curpas.registrasiId;
+          data.pasienId = tabProtKemo === "2" ? tempPxId : curpas.pasienId;
+          data.tglProtokol =
+            tabProtKemo === "2"
+              ? dayjs(tglDashboard).format("YYYY-MM-DD")
+              : dayjs(tanggal).format();
           data.dokterId = drProtokol;
           data.mstProtokolId = idProtokol;
           data.obatProtokol = obatProtokol;
@@ -263,9 +268,13 @@ const FormProtokolKemo = () => {
         }
       } else {
         let data = {};
-        data.registrasiId = tabProtKemo === '2' ? tempRegId : curpas.registrasiId;
-        data.pasienId = tabProtKemo === '2' ? tempPxId : curpas.pasienId;
-        data.tglProtokol = tabProtKemo === '2' ? dayjs(tglDashboard).format('YYYY-MM-DD') : dayjs(tanggal).format();
+        data.registrasiId =
+          tabProtKemo === "2" ? tempRegId : curpas.registrasiId;
+        data.pasienId = tabProtKemo === "2" ? tempPxId : curpas.pasienId;
+        data.tglProtokol =
+          tabProtKemo === "2"
+            ? dayjs(tglDashboard).format("YYYY-MM-DD")
+            : dayjs(tanggal).format();
         data.dokterId = drProtokol;
         data.mstProtokolId = idProtokol;
         data.obatProtokol = obatProtokol;
@@ -283,10 +292,9 @@ const FormProtokolKemo = () => {
 
   const klikRiwProtokol = () => {
     setmdRiwProtokol(true);
-    if (tabProtKemo === '2') {
+    if (tabProtKemo === "2") {
       getRiwProtokol(tempPxId);
-    }
-    else {
+    } else {
       getRiwProtokol(curpas.pasienId);
     }
   };
@@ -331,14 +339,13 @@ const FormProtokolKemo = () => {
               type="primary"
               onClick={() => {
                 setModal(true);
-                if (tabProtKemo === '2') {
+                if (tabProtKemo === "2") {
                   getDataObat(tempRegId, ruangasal);
-                }
-                else {
+                } else {
                   getDataObat(curpas.registrasiId, ruangasal);
                 }
               }}
-              disabled={tabProtKemo === '2' ? true : false}
+              disabled={tabProtKemo === "2" ? true : false}
             >
               Lihat
             </Button>
@@ -360,7 +367,7 @@ const FormProtokolKemo = () => {
               onClick={() => {
                 simpan();
               }}
-              disabled={tabProtKemo === '2' ? true : false}
+              disabled={tabProtKemo === "2" ? true : false}
             >
               Simpan
             </Button>
@@ -587,12 +594,13 @@ const FormProtokolKemo = () => {
                           setTerapi(tempObat);
                           Modal.info({
                             title: "Sukses",
-                            content: `Anda memasukkan ${record.NAMABARANG +
+                            content: `Anda memasukkan ${
+                              record.NAMABARANG +
                               " : " +
                               record.QTYBAR +
                               " " +
                               record.SATUAN
-                              }`,
+                            }`,
                           });
                         } else {
                           Modal.error({
@@ -699,12 +707,13 @@ const FormProtokolKemo = () => {
                           setTerapi(tempObat);
                           Modal.info({
                             title: "Sukses",
-                            content: `Anda memasukkan ${record.NAMABARANG +
+                            content: `Anda memasukkan ${
+                              record.NAMABARANG +
                               " : " +
                               record.QTYBAR +
                               " " +
                               record.SATRSP
-                              }`,
+                            }`,
                           });
                         } else {
                           Modal.error({

@@ -314,7 +314,7 @@ const FormPemeriksaanLain = () => {
     },
     {
       key: "2",
-      label: "Upload Penunjang Dari Luar",
+      label: "Upload Penunjang Lainnya / Dari Luar",
       children: <ButtonUploadFile />,
     },
   ];

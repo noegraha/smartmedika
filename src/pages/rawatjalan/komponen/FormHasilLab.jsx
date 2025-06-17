@@ -143,7 +143,6 @@ const HasilLab = () => {
               />
             </Col>
           </Row>
-          {/* <Formhasillab /> */}
         </Spin>
       </Modal>
     </div>

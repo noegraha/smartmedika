@@ -245,6 +245,7 @@ const FormPengajuanJadwalOperasi = () => {
                 setjenisAnestesi("");
                 setketerangan("");
                 // setdxPraBedah("");
+                setdxKerja("");
                 setpelayananId("");
                 setlokasiOperasi("");
               }}
@@ -275,7 +276,7 @@ const FormPengajuanJadwalOperasi = () => {
               <span>
                 {dayjs(listOperasiPasien.tglTindakan).format("DD-MM-YYYY")}
                 <br></br>
-                {listOperasiPasien.cito === 1 ? (
+                {listOperasiPasien.cito === true ? (
                   <Tag color="magenta">CITO</Tag>
                 ) : (
                   <Tag color="blue">REGULER</Tag>
@@ -345,7 +346,7 @@ const FormPengajuanJadwalOperasi = () => {
                       curpasRI.kelasRawatId
                     );
                     settglTindakan(dayjs(listOperasiPasien.tglTindakan));
-                    setcito(listOperasiPasien.cito === 1 ? true : false);
+                    setcito(listOperasiPasien.cito);
                     setajuanId(listOperasiPasien.ajuanId);
                     setjenisAnestesi(listOperasiPasien.jenisAnestesi);
                     setketerangan(listOperasiPasien.keterangan);
@@ -353,6 +354,7 @@ const FormPengajuanJadwalOperasi = () => {
                     setpelayananId(listOperasiPasien.pelayananId);
                     setdokterId(listOperasiPasien.dokterId);
                     setlokasiOperasi(listOperasiPasien.lokasiOperasi);
+                    setdxKerja(listOperasiPasien.diagnosaKerja);
                     setFormOrder(true);
                   }}
                   style={{
@@ -405,7 +407,7 @@ const FormPengajuanJadwalOperasi = () => {
               <span>
                 {dayjs(listOperasiPasienACC.tglTindakan).format("DD-MM-YYYY")}
                 <br></br>
-                {listOperasiPasienACC.cito === 1 ? (
+                {listOperasiPasienACC.cito === true ? (
                   <Tag color="magenta">CITO</Tag>
                 ) : (
                   <Tag color="blue">REGULER</Tag>
@@ -565,7 +567,7 @@ const FormPengajuanJadwalOperasi = () => {
                   <>
                     <Space>
                       <Checkbox
-                        value={cito}
+                        checked={cito}
                         onChange={(e) => onCito(e)}
                       ></Checkbox>
                       {cito === true ? <Tag color="magenta">CITO</Tag> : ""}

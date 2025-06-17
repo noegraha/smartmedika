@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import { Button, Image, message, Modal } from "antd";
 import jwt_decode from "jwt-decode";
 import { apiInstance } from "../../../api/axios";
+import { useHistory } from "react-router-dom";
 import {
   decryptJSON,
   decryptKeysAndValues,
@@ -41,7 +42,7 @@ const LoginContextProvider = (props) => {
   const [hostPc, sethostPc] = useState(sessionStorage.getItem("Host"));
 
   // const [tema, setTema] = useState("");
-
+  const history = useHistory();
   //CEK CURRENT URL
   const currentURL = new URL(window.location.href);
   const host = currentURL.host;
@@ -346,7 +347,7 @@ const LoginContextProvider = (props) => {
     sessionStorage.setItem("userData", "");
     sessionStorage.clear();
     sessionStorage.removeItem("user");
-    props.history.push("/login");
+    history.push("/login");
     setLogin(false);
     window.location.reload();
   };

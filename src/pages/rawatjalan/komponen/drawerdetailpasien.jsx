@@ -17,7 +17,6 @@ import {
 import { DownOutlined } from "@ant-design/icons";
 import Iframe from "react-iframe";
 import { PasienContext } from "../context/PasienContext";
-import Formhasillab from "./FormHasilLabKlinik";
 import RiwayatOrder from "../orderresep/RiwayatOrder";
 import { HasilRadiologiContext } from "../context/HasilRadiologiContext";
 import { HasilLabContext } from "../context/HasilLabContext";
